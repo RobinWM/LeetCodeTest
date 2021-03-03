@@ -1,7 +1,8 @@
-const merge = function (nums1, m, nums2, n) {
-    let j = 0;
-    
-    for (let i = 0; i < n; i++) {
-        if(nums2[i])
+var merge = function (nums1, m, nums2, n) {
+    for (let i = 0; i <= nums1.length; i++) {
+        if (i >= m) nums1[i] = nums2[i - m]
     }
+    return nums1.sort((a, b) => a - b)
 };
+
+const r = merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
